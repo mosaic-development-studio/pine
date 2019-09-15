@@ -1,0 +1,10 @@
+{
+    "extends": "eslint-config-mosaic",
+    "env": {
+        "browser": false,
+        "es6": true,
+        "jest": true,
+        "node": true
+    },
+    "parser": "babel-eslint"
+}
