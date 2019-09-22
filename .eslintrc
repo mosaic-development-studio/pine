@@ -1,10 +1,17 @@
 {
-    "extends": "eslint-config-mosaic",
+    "extends": [
+        "eslint-config-mosaic",
+        "plugin:react/recommended"
+    ],
     "env": {
-        "browser": false,
+        "browser": true,
         "es6": true,
         "jest": true,
         "node": true
     },
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "rules": {
+        "react/jsx-uses-react": 1,
+        "react/prop-types": 0
+    }
 }
