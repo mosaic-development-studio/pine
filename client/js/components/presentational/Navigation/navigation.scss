@@ -1,0 +1,33 @@
+.navigation {
+    background-color: #182C61;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    left: 0;
+    padding: 25px 25px;
+    position: fixed;
+    top: 0;
+
+    #ApplicationControls {
+        align-self: flex-start;
+    }
+
+    #UserControls {
+        align-self: flex-end;
+        margin-top: auto;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
