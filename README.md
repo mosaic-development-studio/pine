@@ -39,4 +39,13 @@ Admin and users
 ### Tooling
 
 - get all stubs
-    collects all page stubs 
+    collects all page stubs
+
+### Components
+- card
+    - can have title
+    - can contain children of any kind
+- side navigation
+    - meta navigatioon
+- drawer
+    - can contain list
