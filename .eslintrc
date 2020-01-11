@@ -1,7 +1,6 @@
 {
     "extends": [
-        "eslint-config-mosaic",
-        "plugin:react/recommended"
+        "eslint-config-mosaic"
     ],
     "env": {
         "browser": true,
