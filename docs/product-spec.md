@@ -45,3 +45,5 @@ The idea here is that there will be no top-level auth for article viewing.  Acce
 - Project settings
     - User permissions
     - Thematic settings
+    - Notifications
+        - Changelog
