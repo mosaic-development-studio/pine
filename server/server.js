@@ -18,10 +18,23 @@ const serverRenderer = (req, res, next) => {
             return res.status(500).send('An error occured');
         }
 
+        const dataFixture = {
+            content: [{
+                title: 'Some section title',
+                body: 'Some section body'
+            }],
+            heading: 'Inuun',
+            heroImageSource: 'some-pic.jpg',
+            subheading: 'God of the land',
+            type: 'God'
+        };
+
         return res.send(
             data.replace(
                 '<main id="application"></main>',
-                `<main id="application">${ReactDOMServer.renderToString(<Application />)}</main>`
+                `<main id="application">${ReactDOMServer.renderToString(
+                    <Application {...dataFixture} />
+                )}</main>`
             )
         );
     });
@@ -32,7 +45,6 @@ router.use('^/$', serverRenderer);
 router.use(
     express.static(path.resolve(__dirname, '..', 'dist'), { maxAge: '30d' })
 );
-
 
 app.use(router);
 

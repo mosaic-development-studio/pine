@@ -1,7 +1,9 @@
 import React from 'react';
 
-export const Application = () => {
+import { Article } from './Article';
+
+export const Application = props => {
     return (
-        <h1>hello world</h1>
+        <Article {...props} />
     );
 };
