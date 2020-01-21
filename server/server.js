@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 import express from 'express';
+import mongoose from 'mongoose';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
@@ -9,6 +10,8 @@ import { Application } from '../components/Application.jsx';
 
 const app = express();
 const router = express.Router();
+
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
 const serverRenderer = (req, res, next) => {
     fs.readFile(path.resolve('./dist/index.html'), 'utf8', (err, data) => {
