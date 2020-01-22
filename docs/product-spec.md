@@ -47,3 +47,9 @@ The idea here is that there will be no top-level auth for article viewing.  Acce
     - Thematic settings
     - Notifications
         - Changelog
+
+## Models
+Below you can find a link to the specs for each of the various db models.
+
+### User
+The most basic user spec can be found [here](./user-spec.md).
