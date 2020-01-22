@@ -3,6 +3,10 @@ A user model holds the most basic level of authentication.  By default, users ca
 typ
 ```
 User.model = {
+    admin: {
+        default: False,
+        type: Boolean
+    },
     biography: {
         max_length: 300,
         type: String
