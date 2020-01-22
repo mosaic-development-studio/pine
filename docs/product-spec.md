@@ -51,5 +51,10 @@ The idea here is that there will be no top-level auth for article viewing.  Acce
 ## Models
 Below you can find a link to the specs for each of the various db models.
 
+### Article
+The article is the most commonly viewed page.  It can be edited by users and admins alike, though admins can set privaledges that force changes to be approved, or that completely block users from editing.
+
+The article schema can be found [here](./article-spec.md).
+
 ### User
-The most basic user spec can be found [here](./user-spec.md).
+The most basic user schema can be found [here](./user-spec.md).
