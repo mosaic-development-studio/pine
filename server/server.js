@@ -6,10 +6,11 @@ import mongoose from 'mongoose';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
+import { router } from '../router';
 import { Application } from '../components/Application.jsx';
 
 const app = express();
-const router = express.Router();
+// const router = express.Router();
 
 mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
