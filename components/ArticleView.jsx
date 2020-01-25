@@ -3,6 +3,6 @@ import React from 'react';
 
 export const ArticleView = props => {
     return (
-        <Navigation />
+        <Navigation {...props} />
     );
 };
