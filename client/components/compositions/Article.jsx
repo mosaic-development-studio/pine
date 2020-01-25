@@ -4,17 +4,18 @@ import React from 'react';
 export const Article = props => {
     const {
         content,
-        heading,
+        title,
         heroImageSource,
-        subheading,
+        subtitle,
         type
     } = props;
 
-    console.log(content, heading, heroImageSource, subheading, type);
-
     return (
         <article>
-            <h1>{heading}</h1>
+            <span>{type}</span>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+            <img src={heroImageSource} />
         </article>
     );
 };
