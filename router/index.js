@@ -1,12 +1,10 @@
 import express from 'express';
+import { GET_ARTICLE_ROUTE } from './constants';
+import { articleRouteHandler } from './routes/articleRouteHandler';
 
 const router = express.Router();
 
-router.get('/article/:articleName', (req, res) => {
-    const name = req.params.articleName.split('_').join(' ');
-
-    res.send(`<h1>${name}</h1>`);
-});
+router.get(GET_ARTICLE_ROUTE, articleRouteHandler);
 
 router.get('/resource/:file', (req, res) => {
     const filePath = req.params.file;

@@ -4,7 +4,7 @@ export const Navigation = props => {
     return (
         <nav>
             <ul>
-                <li>One</li>
+                <li>{props.a}</li>
                 <li>Two</li>
                 <li>Three</li>
             </ul>
