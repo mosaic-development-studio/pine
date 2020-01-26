@@ -6,6 +6,7 @@
   "scripts": {
     "build": "parcel build ./client/index.html",
     "lint": "eslint --ext=.js,.jsx .",
+    "start:db": "/bin/sh scripts/make_db_directory.sh && mongod --dbpath=./db --smallfiles",
     "test": "echo \"Error: no test specified\" && exit 0",
     "watch:server": "nodemon server"
   },
