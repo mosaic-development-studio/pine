@@ -1,4 +1,4 @@
-import { ArticleView } from '../../client/components/ArticleView';
+import { ArticleView } from '../../client/components/views/ArticleView';
 import { setupRouteForRendering } from '../../middleware/renderMiddleware';
 
 const NAVIGATION = {
