@@ -1,3 +1,4 @@
+import { ArticleModel } from '../../models/ArticleModel';
 import { ArticleView } from '../../client/components/views/ArticleView';
 import { setupRouteForRendering } from '../../middleware/renderMiddleware';
 
@@ -35,7 +36,35 @@ export const articleGETRouteHandler = setupRouteForRendering({
 });
 
 export const articlePOSTRouteHandler = (req, res) => {
+    const {
+        title = 'default title',
+        subtitle = 'default subtitle',
+        type = 'default type',
+        assetPath = 'defaultassetpath.jpg',
+    } = req.body;
+
+    const article = new ArticleModel({
+        title,
+        subtitle,
+        type,
+        assetPath
+    });
+
+    article.save((err, article) => {
+        if (err) {
+            return console.error(err);
+        }
+
+        console.log('Article created', article);
+    });
+
     res.send({
         message: 'hello world'
     });
 };
+
+export const getArticleData = (req, res) => {
+    res.send({
+
+    })
+}
