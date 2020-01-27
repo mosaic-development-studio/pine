@@ -20,7 +20,7 @@ const NAVIGATION = {
     ]
 }
 
-export const articleRouteHandler = setupRouteForRendering({
+export const articleGETRouteHandler = setupRouteForRendering({
     getData: () => ({
         article: {
             content: {},
@@ -33,3 +33,9 @@ export const articleRouteHandler = setupRouteForRendering({
     }), // db layer function
     Application: ArticleView
 });
+
+export const articlePOSTRouteHandler = (req, res) => {
+    res.send({
+        message: 'hello world'
+    });
+};
