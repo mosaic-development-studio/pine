@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/server';
+import ReactDOM from 'react-dom';
 
-import { Application } from '../components/Application';
+import { LandingView } from './components/views/LandingView';
 
-ReactDOM.hydrate(<Application />, document.getElementById('application'));
+ReactDOM.hydrate(<LandingView />, document.getElementById('reactRoot'));
