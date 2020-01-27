@@ -1,3 +1,4 @@
+import { getArticlesWithURL } from './articleRouteHandler';
 import { LandingView } from '../../client/components/views/LandingView';
 import { setupRouteForRendering } from '../../middleware/renderMiddleware';
 
@@ -13,8 +14,6 @@ const ARTICLES = [
 ];
 
 export const landingRouteHandler = setupRouteForRendering({
-    getData: () => ({
-        articleLinks: ARTICLES
-    }), // db layer function
+    getData: getArticlesWithURL, // db layer function
     Application: LandingView
 });

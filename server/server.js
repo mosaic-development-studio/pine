@@ -5,6 +5,7 @@ import { router } from '../router';
 
 const app = express();
 
+mongoose.set('useUnifiedTopology', true);
 mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
 router.use(

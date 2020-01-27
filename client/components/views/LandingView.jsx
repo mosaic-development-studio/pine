@@ -30,7 +30,7 @@ export class LandingView extends React.Component {
     }
 
     componentDidMount() {
-        // this.fetchArticles();
+        this.fetchArticles();
     }
 
     createArticle() {
@@ -51,13 +51,22 @@ export class LandingView extends React.Component {
     }
 
     fetchArticles() {
-        //
+        fetchData({
+            url: '/articles',
+            options: {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'GET'
+            },
+            success: this.handleFetchSuccess,
+            fail: console.log
+        })
     }
 
     handleFetchSuccess(data) {
-        console.log(data);
         this.setState(() => ({
-            articleLinks: data.articleLinks
+            articleLinks: data.map(article => article.url)
         }));
     }
 
@@ -76,8 +85,8 @@ export class LandingView extends React.Component {
             <h1 key="articles-header">Articles</h1>,
             <ul key="articles-list">
                 {this.state.articleLinks.map(link => (
-                    <li key={`${link.text}`}>
-                        <a href={link.href}>{link.text}</a>
+                    <li>
+                        <a href={'/article/' + link}>{link}</a>
                     </li>
                 ))}
             </ul>,
