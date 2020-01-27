@@ -1,4 +1,4 @@
-import { ArticleModel } from '../../models/articleModel';
+import { ArticleModel } from '../../models/ArticleModel';
 import { ArticleView } from '../../client/components/views/ArticleView';
 import { setupRouteForRendering } from '../../middleware/renderMiddleware';
 
