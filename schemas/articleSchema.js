@@ -11,5 +11,6 @@ export const articleSchema = new Schema({
     // },
     subTitle: String,
     title: String,
-    type: String
+    type: String,
+    url: String
 });

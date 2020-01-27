@@ -47,7 +47,8 @@ export const articlePOSTRouteHandler = (req, res) => {
         title,
         subtitle,
         type,
-        assetPath
+        assetPath,
+        url: title.trim().replace(/ /g, '_')
     });
 
     article.save((err, article) => {
@@ -59,12 +60,30 @@ export const articlePOSTRouteHandler = (req, res) => {
     });
 
     res.send({
-        message: 'hello world'
+        message: 'Article created'
     });
 };
 
-export const getArticleData = (req, res) => {
-    res.send({
+// should not be in this file
+export const getArticlesWithURL = () => {
+    return ArticleModel.find({}, function(err, articles) {
+        if (err) {
+            return console.log(err);
+        }
 
-    })
+        return articles;
+    }).select('url');
 }
+
+export const getArticleData = (req, res) => {
+    getArticlesWithURL()
+        .then(data => {
+            res.send(data.reduce((list, article) => article.url
+                ? (acc => {
+                    acc.push({ url: article.url});
+
+                    return acc;
+                })(list) : list, []));
+        })
+        .catch(console.log);
+};
