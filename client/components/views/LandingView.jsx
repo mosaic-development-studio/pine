@@ -34,9 +34,7 @@ export class LandingView extends React.Component {
     }
 
     createArticle() {
-        console.log(this.state);
-
-        return fetchData({
+        fetchData({
             url: '/api/articles',
             options: {
                 body: JSON.stringify(this.state),

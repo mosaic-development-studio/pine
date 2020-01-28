@@ -1,25 +1,6 @@
 import { ArticleModel } from '../../models/ArticleModel';
-import { ArticleView } from '../../client/components/views/ArticleView';
+import { Application } from '../../../client/components/containers/Application';
 import { setupRouteForRendering } from '../../middleware/renderMiddleware';
-
-const NAVIGATION = {
-    actions: [
-        {
-            href: '.',
-            text: 'Create page'
-        }
-    ],
-    items: [
-        {
-            href: '.',
-            text: 'Home'
-        },
-        {
-            href: '',
-            text: 'Log in'
-        }
-    ]
-}
 
 export const articleGETRouteHandler = setupRouteForRendering({
     getData: () => ({
@@ -29,10 +10,9 @@ export const articleGETRouteHandler = setupRouteForRendering({
             subtitle: 'The Garden of the Gods',
             title: 'Inuun',
             type: 'location'
-        },
-        navigation: NAVIGATION
+        }
     }), // db layer function
-    Application: ArticleView
+    Application: Application
 });
 
 export const articlePOSTRouteHandler = (req, res) => {
