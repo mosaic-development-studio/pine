@@ -1,4 +1,17 @@
+import fs from 'fs';
+import path from 'path';
+
+export const APPLICATION_HTML = fs.readFile(
+    path.resolve(__dirname + '../../../client/index.html'),
+    'utf8',
+    function(err, data) {
+        if (err) {
+            console.error(err);
+
+            return 'An error has occured';
+        }
+
+        return data;
+    }
+);
 export const APPLICATION_ROOT_OPENING_TAG = '<div id="reactRoot">';
-export const APPLICATION_ROOT_CLOSING_TAG = '</div>';
-export const APPLICATION_ROOT_TAG = APPLICATION_ROOT_OPENING_TAG + APPLICATION_ROOT_CLOSING_TAG;
-export const HTML_FILE_PATH = './dist/index.html';
