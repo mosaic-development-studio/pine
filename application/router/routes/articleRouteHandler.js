@@ -1,5 +1,5 @@
 import { ArticleModel } from '../../models/ArticleModel';
-import { Application } from '../../../client/components/containers/Application';
+import { LandingView } from '../../../client/components/views/LandingView';
 import { setupRouteForRendering } from '../../middleware/renderMiddleware';
 
 export const articleGETRouteHandler = setupRouteForRendering({
@@ -12,7 +12,7 @@ export const articleGETRouteHandler = setupRouteForRendering({
             type: 'location'
         }
     }), // db layer function
-    Application: Application
+    Application: LandingView
 });
 
 export const articlePOSTRouteHandler = (req, res) => {
