@@ -4,7 +4,7 @@ import {
 } from './markup';
 
 export function setupRouteForRendering(config) {
-    const { getData, Application } = config;
+    const { getData, View } = config;
 
     return function(req, res, next) {
         const applicationString = convertApplicationToString(Application);
